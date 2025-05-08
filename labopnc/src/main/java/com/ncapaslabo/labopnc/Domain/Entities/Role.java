@@ -15,7 +15,7 @@ import java.util.List;
 public class Role  {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer idRole;
+    private Long idRole;
 
     @Column
     private String name;

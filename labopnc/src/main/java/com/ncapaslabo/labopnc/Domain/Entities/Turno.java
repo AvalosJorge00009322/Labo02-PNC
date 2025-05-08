@@ -15,14 +15,14 @@ import java.time.YearMonth;
 public class Turno {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Column
     private YearMonth mes;
     @Column
-    private String hora;
+    private String hora; //mañana, tarde o noche
     @Column
-    private boolean sigueEnPie;
+    private boolean estado; //sigue en pie o no
 
     @ManyToOne
     @JoinColumn(name="id_empleado", nullable = false, foreignKey = @ForeignKey(name="FK_empleado"))

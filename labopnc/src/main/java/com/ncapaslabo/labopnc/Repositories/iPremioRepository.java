@@ -8,7 +8,7 @@ import java.util.List;
 
 
 @Transactional
-public interface iPremioRepository extends iGenericRepository<Premio, Integer> {
+public interface iPremioRepository extends iGenericRepository<Premio, Long> {
     Premio findByNombre(String nombre);
 
     @Query("SELECT p FROM Premio p WHERE p.puntosNecesarios <= :puntos")

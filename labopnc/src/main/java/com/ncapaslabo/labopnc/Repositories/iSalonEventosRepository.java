@@ -10,5 +10,15 @@ import java.util.List;
 
 
 @Transactional
-public interface iSalonEventosRepository extends iGenericRepository<SalonEventos,Integer> {
+public interface iSalonEventosRepository extends iGenericRepository<SalonEventos,Long> {
+
+    SalonEventos findByNombre(String nombre);
+
+
+    @Query("SELECT s FROM SalonEventos s WHERE s.capacidad >= :minCapacidad")
+    List<SalonEventos> findSalonesConMinimaCapacidad(@Param("minCapacidad") Integer minCapacidad);
+
+    @Query(value = "SELECT * FROM salon_eventos WHERE descripcion LIKE %:texto%", nativeQuery = true)
+    List<SalonEventos> buscarPorDescripcionNative(@Param("texto") String texto);
+
 }

@@ -15,7 +15,7 @@ import java.time.LocalDate;
 public class ComprobantePago {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     @Column
     private float montoTotal;
     @Column
