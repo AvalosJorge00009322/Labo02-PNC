@@ -1,9 +1,8 @@
 package com.ncapaslabo.labopnc.Domain.Entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class SalonEventos {
@@ -13,4 +12,7 @@ public class SalonEventos {
     private String nombre;
     private int capacidad;
     private String descripcion;
+
+    @OneToMany(mappedBy = "salon")
+    private List<Reserva> reservas;
 }

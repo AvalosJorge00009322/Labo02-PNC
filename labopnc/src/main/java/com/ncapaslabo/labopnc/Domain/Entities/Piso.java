@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -23,5 +25,16 @@ public class Piso {
 
     @Column(name = "color_boton", nullable = false)
     private String colorBoton;
+
+    @ManyToOne
+    @JoinColumn(name = "id_piso", nullable = false)
+    private Piso piso;
+
+    @ManyToOne
+    @JoinColumn(name = "id_edificio", nullable = false)
+    private Edificio edificio;
+
+    @OneToMany(mappedBy = "piso")
+    private List<Habitacion> habitaciones;
 
 }

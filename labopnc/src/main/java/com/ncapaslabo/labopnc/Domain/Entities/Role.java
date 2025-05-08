@@ -20,7 +20,6 @@ public class Role  {
     @Column
     private String name;
 
-    /*@OneToMany
-    private List<User> users;*/
-
+    @OneToMany(mappedBy = "role")
+    private List<Usuario> usuarios;
 }

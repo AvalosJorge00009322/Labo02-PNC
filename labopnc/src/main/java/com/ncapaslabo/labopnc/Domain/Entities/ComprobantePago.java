@@ -1,9 +1,6 @@
 package com.ncapaslabo.labopnc.Domain.Entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
@@ -14,4 +11,9 @@ public class ComprobantePago {
     private Integer id;
     private float montoTotal;
     private LocalDate fechaEmision;
+
+    @ManyToOne
+    @JoinColumn(name = "id_reserva", nullable = false)
+    private Reserva reserva;
+
 }

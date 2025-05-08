@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 import java.util.UUID;
 import java.time.LocalDate;
 
@@ -33,5 +35,12 @@ public class Usuario {
 
     @Column(nullable = false)
     private String rol;
+
+    @ManyToOne
+    @JoinColumn(name = "id_role", nullable = false)
+    private Role role;
+
+    @OneToMany(mappedBy = "usuario")
+    private List<Reserva> reservas;
 
 }

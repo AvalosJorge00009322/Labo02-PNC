@@ -21,4 +21,6 @@ public class Turno {
     private YearMonth mes;
     private String hora;
     private boolean sigueEnPie;
+
+
 }

@@ -34,6 +34,9 @@ public class Habitacion {
     @JoinColumn(name = "id_piso", nullable = false)
     private Piso piso;
 
+    @ManyToOne
+    @JoinColumn(name = "id_habitacion")
+    private Habitacion habitacion;
 
 
 }
