@@ -23,18 +23,15 @@ public class Piso {
     @Column(nullable = false)
     private String nombre;
 
-    @Column(name = "color_boton", nullable = false)
-    private String colorBoton;
+    @ManyToOne
+    @JoinColumn(name = "id_boton", nullable = false, foreignKey = @ForeignKey(name="FK_boton"))
+    private Boton boton;
 
     @ManyToOne
-    @JoinColumn(name = "id_piso", nullable = false)
-    private Piso piso;
-
-    @ManyToOne
-    @JoinColumn(name = "id_edificio", nullable = false)
+    @JoinColumn(name = "id_edificio", nullable = false , foreignKey = @ForeignKey(name="FK_edificio"))
     private Edificio edificio;
 
-    @OneToMany(mappedBy = "piso")
-    private List<Habitacion> habitaciones;
+    /*@OneToMany(mappedBy = "piso")
+    private List<Habitacion> habitaciones;*/
 
 }

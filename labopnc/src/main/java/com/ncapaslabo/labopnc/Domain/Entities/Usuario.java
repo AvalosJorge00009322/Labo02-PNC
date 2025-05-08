@@ -37,10 +37,9 @@ public class Usuario {
     private String rol;
 
     @ManyToOne
-    @JoinColumn(name = "id_role", nullable = false)
+    @JoinColumn(name = "id_role", nullable = false, foreignKey = @ForeignKey(name="FK_user_role"))
     private Role role;
 
-    @OneToMany(mappedBy = "usuario")
-    private List<Reserva> reservas;
+
 
 }

@@ -24,8 +24,5 @@ public class Edificio {
     @Column(nullable = false)
     private String ubicacion;
 
-    @OneToMany(mappedBy = "edificio")
-    private List<Habitacion> habitaciones;
-
 
 }
