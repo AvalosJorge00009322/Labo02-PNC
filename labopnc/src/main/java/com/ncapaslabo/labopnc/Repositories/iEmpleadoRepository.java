@@ -14,5 +14,5 @@ public interface iEmpleadoRepository extends  iGenericRepository<Empleado, UUID>
 
     @Query("SELECT * FROM Empleado WHERE e.id = ?1")
     Empleado findEmpleadoById(UUID id);
-
 }
+

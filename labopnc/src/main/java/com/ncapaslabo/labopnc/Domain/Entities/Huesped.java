@@ -28,14 +28,4 @@ public class Huesped {
     @JoinColumn(name = "id_usuario", nullable = false)
     private Usuario usuario;
 
-    @ManyToOne
-    @JoinColumn(name = "id_edificio")
-    private Edificio edificio;
-
-    @OneToMany(mappedBy = "piso")
-    private List<Boton> botones;
-
-    @OneToMany(mappedBy = "piso")
-    private List<Habitacion> habitaciones;
-
 }
