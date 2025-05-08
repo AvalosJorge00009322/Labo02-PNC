@@ -8,12 +8,13 @@ import org.springframework.data.repository.query.Param;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.YearMonth;
 import java.util.List;
 
 
 @Transactional
 public interface iTurnosRepository extends iGenericRepository<Turno, Long> {
-    Turno findByNombre(String nombre);
+    Turno findByMes(YearMonth mes);
 
     @Query("SELECT t FROM Turno t WHERE t.estado = true")
     List<Turno> findTurnosActivos();

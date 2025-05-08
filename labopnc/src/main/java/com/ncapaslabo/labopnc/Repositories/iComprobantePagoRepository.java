@@ -6,11 +6,12 @@ import org.springframework.data.repository.query.Param;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.UUID;
 
 
 @Transactional
 public interface iComprobantePagoRepository extends iGenericRepository<ComprobantePago, Long> {
-    List<ComprobantePago> findByReservaId(Long reservaId);
+    List<ComprobantePago> findByReservaId(UUID reservaId);
 
     @Query("SELECT c FROM ComprobantePago c WHERE c.fechaEmision = :fechaEmision")
     List<ComprobantePago> findByFechaEmision(@Param("fechaEmision") LocalDate fechaEmision);

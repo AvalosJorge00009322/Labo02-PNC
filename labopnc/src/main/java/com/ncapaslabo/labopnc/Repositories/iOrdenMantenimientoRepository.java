@@ -7,6 +7,7 @@ import org.springframework.data.repository.query.Param;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.UUID;
 
 
 @Transactional
@@ -18,7 +19,7 @@ public interface iOrdenMantenimientoRepository extends iGenericRepository<OrdenM
     String findDescripcionByOrdenId(@Param("ordenId") Long ordenId);
 
     @Query(value = "SELECT * FROM orden_mantenimiento WHERE id_empleado = :empleadoId", nativeQuery = true)
-    List<OrdenMantenimiento> findOrdenesPorEmpleadoNative(@Param("empleadoId") Long empleadoId);
+    List<OrdenMantenimiento> findOrdenesPorEmpleadoNative(@Param("empleadoId") UUID empleadoId);
 
 
 }

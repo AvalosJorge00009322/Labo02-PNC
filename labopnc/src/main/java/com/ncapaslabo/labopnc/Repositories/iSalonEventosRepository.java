@@ -14,7 +14,6 @@ public interface iSalonEventosRepository extends iGenericRepository<SalonEventos
 
     SalonEventos findByNombre(String nombre);
 
-
     @Query("SELECT s FROM SalonEventos s WHERE s.capacidad >= :minCapacidad")
     List<SalonEventos> findSalonesConMinimaCapacidad(@Param("minCapacidad") Integer minCapacidad);
 

@@ -28,7 +28,7 @@ public class CanjePremio {
     private Premio premio;
 
     @Column
-    private LocalDate fechaCanje;
+    private LocalDate fecha;
 
     @Column
     private int puntosUsados;

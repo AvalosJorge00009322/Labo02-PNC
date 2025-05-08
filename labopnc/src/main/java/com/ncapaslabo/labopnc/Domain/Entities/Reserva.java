@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.UUID;
 
 @Entity
 @Data
@@ -15,14 +16,14 @@ import java.util.List;
 @Table(name = "reserva")
 public class Reserva {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
     @Column
     private LocalDate fechaEntrada;
     @Column
     private LocalDate fechaSalida;
     @Column
-    private String estado;
+    private boolean estado;
 
     @OneToOne
     private ComprobantePago comprobantePago;
