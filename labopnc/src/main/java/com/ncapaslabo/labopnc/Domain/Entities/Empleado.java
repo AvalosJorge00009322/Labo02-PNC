@@ -31,11 +31,11 @@ public class Empleado {
     @Column(name = "es_jefe", nullable = false)
     private Boolean esJefe;
 
-    @OneToMany(mappedBy = "empleado")
+    /*@OneToMany(mappedBy = "empleado")
     private List<OrdenMantenimiento> ordenes;
 
     @OneToMany(mappedBy = "empleado")
-    private List<Turno> turnos;
+    private List<Turno> turnos;*/
 
 
 }

@@ -21,21 +21,11 @@ public class Huesped {
     private UUID id;
 
     @ManyToOne
-    @JoinColumn(name = "id_reserva", nullable = false)
+    @JoinColumn(name = "id_reserva", nullable = false, foreignKey = @ForeignKey(name="FK_reserva"))
     private Reserva reserva;
 
     @ManyToOne
-    @JoinColumn(name = "id_usuario", nullable = false)
+    @JoinColumn(name = "id_usuario", nullable = false, foreignKey = @ForeignKey(name="FK_usuario"))
     private Usuario usuario;
-
-    @ManyToOne
-    @JoinColumn(name = "id_edificio")
-    private Edificio edificio;
-
-    @OneToMany(mappedBy = "piso")
-    private List<Boton> botones;
-
-    @OneToMany(mappedBy = "piso")
-    private List<Habitacion> habitaciones;
 
 }
