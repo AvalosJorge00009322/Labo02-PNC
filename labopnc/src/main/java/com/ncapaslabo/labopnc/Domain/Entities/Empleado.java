@@ -31,6 +31,10 @@ public class Empleado {
     @Column(name = "es_jefe", nullable = false)
     private Boolean esJefe;
 
+    @ManyToOne
+    @JoinColumn(name = "id_usuario", nullable = false, foreignKey = @ForeignKey(name="FK_usuario"))
+    private Usuario usuario;
+
     /*@OneToMany(mappedBy = "empleado")
     private List<OrdenMantenimiento> ordenes;
 
