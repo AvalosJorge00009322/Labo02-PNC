@@ -31,9 +31,8 @@ public class Habitacion {
     private String descripcion;
 
     @ManyToOne
-    @JoinColumn(name = "id_piso", nullable = false)
+    @JoinColumn(name = "id_piso", nullable = false , foreignKey = @ForeignKey(name="FK_piso"))
     private Piso piso;
-
 
 
 }

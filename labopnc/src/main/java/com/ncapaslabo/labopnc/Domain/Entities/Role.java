@@ -14,13 +14,12 @@ import java.util.List;
 
 public class Role  {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer idRole;
 
     @Column
     private String name;
 
-    /*@OneToMany
-    private List<User> users;*/
-
+    /*@OneToMany(mappedBy = "role")
+    private List<Usuario> usuarios;*/
 }

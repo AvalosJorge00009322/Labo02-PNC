@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -28,5 +30,12 @@ public class Empleado {
 
     @Column(name = "es_jefe", nullable = false)
     private Boolean esJefe;
+
+    /*@OneToMany(mappedBy = "empleado")
+    private List<OrdenMantenimiento> ordenes;
+
+    @OneToMany(mappedBy = "empleado")
+    private List<Turno> turnos;*/
+
 
 }

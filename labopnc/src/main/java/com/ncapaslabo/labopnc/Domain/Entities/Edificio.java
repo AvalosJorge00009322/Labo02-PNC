@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -22,4 +23,6 @@ public class Edificio {
 
     @Column(nullable = false)
     private String ubicacion;
+
+
 }
